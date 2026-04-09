@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord of Insomnia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="rain-canvas"></canvas>
+
+  <div class="wrapper">
+
+    <header>
+      <span class="moon">🌑</span>
+      <h1 class="site-title">Lord of Insomnia</h1>
+      <p class="site-subtitle">words written at 3 a.m.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#writings">Writings</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- Intro -->
+    <div class="intro-block" id="about">
+      This is a place where thoughts come when sleep won't.
+      No audience required — just the dark, the rain,
+      and whatever feeling refuses to leave.
+      Read if you want. You're not alone in this.
+    </div>
+
+    <!-- Writings list -->
+    <section id="writings">
+      <p class="section-label">Writings</p>
+
+      <div class="post-list">
+
+        <a class="post-card" href="posts/the-3am-feeling.html">
+          <div class="post-card-meta">April 8, 2026 &nbsp;·&nbsp; thought</div>
+          <div class="post-card-title">The 3 A.M. Feeling</div>
+          <div class="post-card-excerpt">
+            There's a specific kind of quiet that only exists after midnight. Not peaceful — just empty.
+            The world has fallen asleep and you're still sitting here, running through
+            things you should've said, things you should've done differently.
+          </div>
+          <div class="post-card-footer">read →</div>
+        </a>
+
+        <a class="post-card" href="posts/nobody-told-me.html">
+          <div class="post-card-meta">April 7, 2026 &nbsp;·&nbsp; reflection</div>
+          <div class="post-card-title">Nobody Told Me It Would Feel Like This</div>
+          <div class="post-card-excerpt">
+            I used to think sadness was something that happened to you in a dramatic moment —
+            a door slamming, rain on a funeral. Turns out it mostly looks like staring at your
+            phone waiting for a message that's not coming.
+          </div>
+          <div class="post-card-footer">read →</div>
+        </a>
+
+        <a class="post-card" href="posts/favorite-song.html">
+          <div class="post-card-meta">April 5, 2026 &nbsp;·&nbsp; small thing</div>
+          <div class="post-card-title">That Song I Can't Listen to Anymore</div>
+          <div class="post-card-excerpt">
+            You know the one. It wasn't even your song together.
+            It just happened to be playing and now it belongs to that moment forever,
+            and you can't get it back.
+          </div>
+          <div class="post-card-footer">read →</div>
+        </a>
+
+      </div>
+    </section>
+
+  </div><!-- /wrapper -->
+
+  <footer>
+    &copy; Lord of Insomnia &nbsp;·&nbsp; still awake
+  </footer>
+
+  <script src="rain-animation.js"></script>
+
+</body>
+</html>

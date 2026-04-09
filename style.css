@@ -1,0 +1,271 @@
+/* ───────────────────────────────────────────────
+   Lord of Insomnia — Sad Theme
+   A place to write. A place to be heard.
+─────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap');
+
+:root {
+  --bg:         #0d0f14;
+  --bg-card:    #13161e;
+  --bg-card2:   #181c26;
+  --border:     #1e2333;
+  --accent:     #4a6fa5;
+  --accent-dim: #2d4466;
+  --text:       #c8cdd8;
+  --text-muted: #6b7280;
+  --text-dim:   #9aa3b0;
+  --rain:       rgba(74, 111, 165, 0.08);
+  --glow:       rgba(74, 111, 165, 0.15);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Rain canvas ── */
+#rain-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Layout ── */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3.5rem;
+}
+
+.site-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 600;
+  color: #e8eaf0;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.site-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.moon {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(200, 210, 255, 0.3));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Nav ── */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.8rem;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+
+nav a:hover { color: var(--accent); }
+
+/* ── Section headings ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Post cards ── */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 4rem;
+}
+
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.6rem 1.8rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.post-card:hover {
+  border-color: var(--accent-dim);
+  box-shadow: 0 0 24px var(--glow);
+  transform: translateY(-2px);
+}
+
+.post-card-meta {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.55rem;
+}
+
+.post-card-title {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  color: #d8dce8;
+  margin-bottom: 0.55rem;
+  line-height: 1.4;
+}
+
+.post-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-footer {
+  margin-top: 1rem;
+  font-size: 0.76rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+/* ── Single post page ── */
+.post-header {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.post-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  color: #e8eaf0;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.post-body {
+  font-family: 'Lora', serif;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--text-dim);
+}
+
+.post-body p     { margin-bottom: 1.4em; }
+.post-body em    { color: #b0b8cc; font-style: italic; }
+.post-body strong { color: #d0d4e0; font-weight: 600; }
+
+.post-body blockquote {
+  border-left: 3px solid var(--accent-dim);
+  padding-left: 1.2rem;
+  margin: 1.8rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 3rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
+
+/* ── About / intro block ── */
+.intro-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-dim);
+  border-radius: 6px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 3.5rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
